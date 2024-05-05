@@ -1,0 +1,18 @@
+<?php
+$conn=mysqli_connect("localhost","root","","xyz");
+if(isset($_POST['submit']))
+{
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $city=$_POST['city'];
+    $mobno=$_POST['mobno'];
+
+    $sql="insert into stud(name,email,city,mobno)values('$name','$email','$city','$mobno')";
+    $result=mysqli_query($conn,$sql);
+
+    if($result)
+    {
+        echo "<script>alert('your data store succesfully');</script>";
+    }
+}
+?>
