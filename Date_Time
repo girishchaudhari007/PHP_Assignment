@@ -1,0 +1,9 @@
+<?php
+$current_time=time();
+
+echo "Current date and time(YYYY-MM-DD HH-MM-SS) :".date("Y-m-d H:i:s",$current_time)."<br>";
+echo "Current date and time(MM-DD-YY HH-MM-SS AM/PM) :".date("m/d/y h:i:s A",$current_time)."<br>";
+echo "Current date(DD/MM/YYYY) :".date("d/m/y",$current_time)."<br>";
+echo "Current time(HH-MM-SS) :".date("H:i:s",$current_time);
+
+?>
