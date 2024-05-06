@@ -1,0 +1,107 @@
+<?php
+$conn=mysqli_connect("localhost","root","","login");
+
+if(isset($_POST["submit"]))
+{
+    $name=$_POST["name"];
+    $lname=$_POST["lname"];
+    $mno=$_POST["mno"];
+    $city=$_POST["city"];
+}
+
+$sql="insert into stud(fname,lname,mno,city)values('$name','$lname','$mno','$city')";
+$result=mysqli_query($conn,$sql);
+
+if($result)
+{
+    echo "<script>alert('data stored succesfully');</script>";
+}
+
+
+// $sql = "UPDATE stud SET name='sonu' WHERE id=1";
+// if (mysqli_query($conn, $sql)){
+// echo "Record updated successfully";
+// } else {
+// echo "Error updating record: " . mysqli_error($conn);
+// }
+
+
+// $sql = "SELECT id, firstname, lastname FROM login";
+// $result = mysqli_query($conn, $sql);
+// if (mysqli_num_rows($result) > 0) {
+// // output data of each row
+// while($row = mysqli_fetch_assoc($result)) {
+// echo "id: " . $row["id"]. " -Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+// }
+// } else {
+// echo "0 results";
+// }
+
+
+// $sql = "DELETE FROM MyGuests WHERE id=3";
+// if (mysqli_query($conn, $sql)) {
+// echo "Record deleted successfully";
+// } else {
+// echo "Error deleting record: " . mysqli_error($conn);
+// }
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 2%;
+            padding: 0%;
+        }
+        .abc{
+            border-style: inset;
+            height: 500px;
+            width: 1000px;
+            background-color: antiquewhite;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        .main{
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            font-size: 20px;
+        }
+        button{
+            height: 30px;
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="abc">
+        <h1>Login Form</h1>
+        <form action="#" method="post" >
+            <div class="main">
+                <label for>Fist Name:</label>
+                <input type="text" name="name"><br>
+                <label for>Last Name</label>
+                <input type="text" name="lname"><br>
+                <label for>Mob. No</label>
+                <input type="text" name="mno"><br>
+                <label for>City</label>
+                <input type="text" name="city"><br>
+                <button type="submit" name="submit">Submit</button>&nbsp;
+                <button type="update" name="update">Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
